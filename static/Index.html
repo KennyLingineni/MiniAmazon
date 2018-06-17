@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Amazon</title>
+</head>
+<body>
+    <h2> Add Product</h2>
+    <form action="/api/product" method="POST">
+        <input type="text" name="name" placeholder="Name" required><br>
+        <input type="text" name="desc" placeholder="Description" required><br>
+        <input type ="number" name="price" placeholder="price" required><br>
+        <input type="submit" value="ADD">
+    </form>
+
+    <h2> Search</h2>
+    <form action ="/api/product" method ="GET">
+        <input type="text" name="name" placeholder="Name" required><br>
+        <input type="submit" value="SEARCH">
+
+    </form>
+
+
+</body>
+</html>
