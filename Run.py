@@ -13,12 +13,14 @@ def index():
 
 @app.route('/api/product',methods=['GET','POST'])
 def product():
-    print("Enters the def for searrch with GET")
+
     if request.method == 'GET':
+        print("Enters the def for searrch with GET")
         query = request.args['name']
         for prod in products:
             if prod['name'] == query:
                 print("From GET query is for: ",query)
+                print("JSON Format : /n", jsonify(prod))
                 return jsonify(prod)
         return 'NO Match'
 
@@ -34,7 +36,7 @@ def product():
         }
         print(prod)
         products.append(prod)
-        return send_from_directory('static,index.html')
+        return send_from_directory('static', 'Index.html')
 
 
-app.run(host='127.0.0.1', port=5009, debug=True)
+app.run(host='127.0.0.1', port=5008, debug=True)
