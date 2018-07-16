@@ -1,7 +1,9 @@
 import flask
-from flask import Flask,request,jsonify,send_from_directory
 
-app=Flask('MiniAmazon')
+
+app=Flask('MiniAmazon') # To initialise flask
+
+
 
 products=[]
 
@@ -17,6 +19,7 @@ def product():
     if request.method == 'GET':
         print("Enters the def for searrch with GET")
         query = request.args['name']
+
         for prod in products:
             if prod['name'] == query:
                 print("From GET query is for: ",query)

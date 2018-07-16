@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--INDEX page is to login or signup. When the url is hit this is what the user sees -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Amazon</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form action="/api/user" method="post">
+        <input type="text" name="op_type" value="login" hidden>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="LOGIN">
+        <!-- The above are user inputs. The html expects these inputs to be filled and once submitted the browser sends these values to the backend.-->
+        <!--  The Value login is like hard corded which is used as a identifier to be differentiated for the back end code to process
+        if it is a login/signup. This is not required for the user and so is invisible;it is only for the back end code.-->
+    </form>
+
+    <h2>Signup</h2>
+    <form action="/api/user" method="post">
+        <input type="text" name="op_type" value="signup" hidden>
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="SIGNUP">
+    </form>
+</body>
+</html>
